@@ -16,6 +16,24 @@
       "message": "Why is this considered redundant?  std::find_if comes from there.",
       "revId": "d61c50a9dd75cd9dd6186e6a9ccffa0ddc3c1b07",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abeb4e88_482eed06",
+        "filename": "chassiskill.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2022-06-21T05:04:50Z",
+      "side": 0,
+      "message": "\u003e Why is this considered redundant?  std::find_if comes from there.\n\nBecause after I removed it the compilation passed.\nIt has been restored.",
+      "parentUuid": "cc06cab8_28e262f2",
+      "revId": "d61c50a9dd75cd9dd6186e6a9ccffa0ddc3c1b07",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
