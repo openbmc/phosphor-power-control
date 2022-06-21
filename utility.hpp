@@ -3,7 +3,7 @@
 #include <gpioplus/chip.hpp>
 #include <gpioplus/handle.hpp>
 #include <gpioplus/utility/aspeed.hpp>
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 
 #include <exception>
 #include <string>
@@ -28,9 +28,7 @@ bool gpioSetValue(const std::string& gpioName, bool activeLow, bool asserted)
     }
     catch (const std::logic_error& e)
     {
-        phosphor::logging::log<phosphor::logging::level::ERR>(
-            "Error in gpioplus - nameToOffset",
-            phosphor::logging::entry("ERROR=%s", e.what()));
+        lg2::error("Error in gpioplus - nameToOffset: {ERROR}", "ERROR", e);
         return false;
     }
 
@@ -48,9 +46,7 @@ bool gpioSetValue(const std::string& gpioName, bool activeLow, bool asserted)
     }
     catch (const std::exception& e)
     {
-        phosphor::logging::log<phosphor::logging::level::ERR>(
-            "Error in gpioplus",
-            phosphor::logging::entry("ERROR=%s", e.what()));
+        lg2::error("Error in gpioplus: {ERROR}", "ERROR", e);
         return false;
     }
 
