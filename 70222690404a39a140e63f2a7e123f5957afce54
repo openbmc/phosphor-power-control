@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cc075fd_ecbd4588",
+        "filename": "subprojects/nlohmann_json.wrap",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-06-21T18:56:09Z",
+      "side": 1,
+      "message": "Remove file",
+      "revId": "70222690404a39a140e63f2a7e123f5957afce54",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
