@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47964a69_dbff1cf8",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-06-21T04:32:26Z",
+      "side": 1,
+      "message": "I don\u0027t think this works without the right [provide] in the wrap file.",
+      "revId": "1a47f6df0b407f546b23e154f01e2b678aa2fb0c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b72a23a_fba271f1",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-06-21T04:32:26Z",
+      "side": 1,
+      "message": "This is a little unusual place to install this.  Usually it would be `/usr/libexec/\u003cpackage\u003e/\u003cbin\u003e` per the anti-patterns.md, but it seems like maybe the autotools was already doing this.",
+      "revId": "1a47f6df0b407f546b23e154f01e2b678aa2fb0c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
