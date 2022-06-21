@@ -4,6 +4,7 @@
 #include <gpioplus/handle.hpp>
 #include <gpioplus/utility/aspeed.hpp>
 #include <phosphor-logging/log.hpp>
+
 #include <exception>
 #include <string>
 
@@ -25,23 +26,22 @@ bool gpioSetValue(const std::string& gpioName, bool activeLow, bool asserted)
     {
         gpioOffset = gpioplus::utility::aspeed::nameToOffset(gpioName);
     }
-    catch(const std::logic_error& e)
+    catch (const std::logic_error& e)
     {
         phosphor::logging::log<phosphor::logging::level::ERR>(
-                            "Error in gpioplus - nameToOffset",
-                            phosphor::logging::entry("ERROR=%s", e.what()));
+            "Error in gpioplus - nameToOffset",
+            phosphor::logging::entry("ERROR=%s", e.what()));
         return false;
     }
 
     try
     {
-        //TODO: openbmc/phosphor-power-control#1 - Handle cases where gpiochip
-        //      could be non-zero.
+        // TODO: openbmc/phosphor-power-control#1 - Handle cases where gpiochip
+        //       could be non-zero.
         gpioplus::Chip chip(0);
         gpioplus::HandleFlags flags(chip.getLineInfo(gpioOffset).flags);
         flags.output = true;
-        gpioplus::Handle handle(chip, {{gpioOffset, 0}}, flags,
-                                "chassiskill");
+        gpioplus::Handle handle(chip, {{gpioOffset, 0}}, flags, "chassiskill");
 
         bool value = (asserted ^ activeLow);
         handle.setValues({value});
@@ -49,8 +49,8 @@ bool gpioSetValue(const std::string& gpioName, bool activeLow, bool asserted)
     catch (const std::exception& e)
     {
         phosphor::logging::log<phosphor::logging::level::ERR>(
-                            "Error in gpioplus",
-                            phosphor::logging::entry("ERROR=%s", e.what()));
+            "Error in gpioplus",
+            phosphor::logging::entry("ERROR=%s", e.what()));
         return false;
     }
 

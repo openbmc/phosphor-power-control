@@ -1,11 +1,12 @@
 #include "utility.hpp"
 
+#include <nlohmann/json.hpp>
+#include <phosphor-logging/log.hpp>
+
 #include <algorithm>
 #include <cstring>
 #include <experimental/filesystem>
 #include <fstream>
-#include <nlohmann/json.hpp>
-#include <phosphor-logging/log.hpp>
 
 using json = nlohmann::json;
 using namespace phosphor::logging;
@@ -50,10 +51,10 @@ int main(void)
 
     for (const auto& gpio : gpios)
     {
-        auto gpioEntry = std::find_if(defs.begin(), defs.end(),
-                            [&gpio](const auto& g) {
-                                return g["name"] == gpio["name"];
-                            });
+        auto gpioEntry =
+            std::find_if(defs.begin(), defs.end(), [&gpio](const auto& g) {
+                return g["name"] == gpio["name"];
+            });
 
         if (gpioEntry != defs.end())
         {
