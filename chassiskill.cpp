@@ -1,13 +1,12 @@
 #include "utility.hpp"
 
 #include <nlohmann/json.hpp>
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 
 #include <algorithm>
 #include <fstream>
 
 using json = nlohmann::json;
-using namespace phosphor::logging;
 using namespace utility;
 
 constexpr auto gpioDefsFile = "/etc/default/obmc/gpio/gpio_defs.json";
@@ -18,8 +17,8 @@ int main(void)
 
     if (!gpioDefsStream.is_open())
     {
-        log<level::ERR>("Error opening gpio definitions file",
-                        entry("FILE=%s", gpioDefsFile));
+        lg2::error("Error opening gpio definitions: {PATH}", "PATH",
+                   gpioDefsFile);
         return 1;
     }
 
@@ -27,8 +26,8 @@ int main(void)
 
     if (data.is_discarded())
     {
-        log<level::ERR>("Error parsing gpio definitions file",
-                        entry("FILE=%s", gpioDefsFile));
+        lg2::error("Error parsing gpio definitions: {PATH}", "PATH",
+                   gpioDefsFile);
         return 1;
     }
 
@@ -40,8 +39,8 @@ int main(void)
 
     if (gpios.size() <= 0)
     {
-        log<level::ERR>("Could not find power_up_outs defs",
-                        entry("FILE=%s", gpioDefsFile));
+        lg2::error("Could not find power_up_outs defs: {PATH}", "PATH",
+                   gpioDefsFile);
         return 1;
     }
 
@@ -61,14 +60,13 @@ int main(void)
 
             if (!gpioSetValue(pin, !activeLow, false))
             {
-                log<level::ERR>("chassiskill::gpioSetValue() failed",
-                                entry("PIN=%s", pin.c_str()));
+                lg2::error("chassiskill::gpioSetValue() failed: {PIN}", "PIN",
+                           pin);
                 return 1;
             }
             else
             {
-                log<level::INFO>("'chassiskill' operation complete",
-                                 entry("PIN=%s", pin.c_str()));
+                lg2::info("chassiskill::operation complete: {PIN}", "PIN", pin);
             }
         }
     }
