@@ -16,6 +16,24 @@
       "message": "Need [provides] section.\n\nI\u0027d prefer nlohmann-json.wrap",
       "revId": "66150bca19af9c8aaca07a0aaa7452c33dcb0965",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e25279d6_88e16c08",
+        "filename": "subprojects/nlohmann_json.wrap",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2022-06-21T05:05:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79fe3c6f_9e01c257",
+      "revId": "66150bca19af9c8aaca07a0aaa7452c33dcb0965",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
