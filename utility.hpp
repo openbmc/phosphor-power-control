@@ -5,7 +5,6 @@
 #include <gpioplus/utility/aspeed.hpp>
 #include <phosphor-logging/log.hpp>
 
-#include <exception>
 #include <string>
 
 namespace utility
