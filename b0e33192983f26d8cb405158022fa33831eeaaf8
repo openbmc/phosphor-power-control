@@ -16,6 +16,24 @@
       "message": "Please restore this one also.  We use exception in multiple places in this file.\n\nA header file is only \"redundant\" if its contents are not being used in _this_ file.  Generally you should follow include-what-you-use practices and not rely on implicit headers from dependencies.  Those dependencies could change their behavior any day (or in some cases the STL headers change based on the libc++ implementation and we get a breakage when we upgrade the compiler; we\u0027ve seen that many times).",
       "revId": "b0e33192983f26d8cb405158022fa33831eeaaf8",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c43041d3_cd4723f5",
+        "filename": "utility.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2022-06-22T00:27:31Z",
+      "side": 0,
+      "message": "\u003e Please restore this one also.  We use exception in multiple places in this file.\n\u003e \n\u003e A header file is only \"redundant\" if its contents are not being used in _this_ file.  Generally you should follow include-what-you-use practices and not rely on implicit headers from dependencies.  Those dependencies could change their behavior any day (or in some cases the STL headers change based on the libc++ implementation and we get a breakage when we upgrade the compiler; we\u0027ve seen that many times).\n\nThanks Patrick, got it.\nDone",
+      "parentUuid": "0c0ef7ac_cbd78b24",
+      "revId": "b0e33192983f26d8cb405158022fa33831eeaaf8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
